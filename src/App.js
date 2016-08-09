@@ -3,15 +3,30 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  
+  state = {
+    name:""
+    };
+    
+    change = (event)=> {
+      var inputName = event.target.value;
+      
+     this.setState({name: inputName});
+    };
+    
   render() {
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Hi Aurique! Welcome to The World of 52 Fakers</h2>
+          <h2>Welcome to The Jungle {this.state.name}</h2>
         </div>
         <p className="App-intro">
-         How should i start this?
+         <form>
+         Enter Name:
+         
+         <input type="text" onChange={this.change}/>
+         </form>
         </p>
       </div>
     );
